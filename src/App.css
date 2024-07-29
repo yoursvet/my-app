@@ -1,38 +1,106 @@
+/* Основные стили для приложения */
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  height: 100vh; /* Высота на весь экран */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  position: relative;
+}
+
+/* Фон на весь экран */
+.background-image {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Фон фиксирован */
+  width: 100%;
+  height: 100vh; /* Фон на весь экран */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Фон за всеми другими элементами */
+}
+
+/* Оверлей для полупрозрачного фона */
+.overlay {
+  background: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон для наложения */
+  height: 100%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.content-container {
+  max-width: 1200px; /* Максимальная ширина контента */
+  width: 100%;
+  text-align: center; /* Выравнивание текста по центру */
+}
+
+.main-menu {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.headline-1 {
+  font-size: 30px; /* Размер шрифта для первого заголовка */
+  text-align: left; /* Выравнивание текста по левому краю */
+  margin: 20px 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.headline-2 {
+  font-size: 56px; /* Размер шрифта для второго заголовка */
+  text-align: left; /* Выравнивание текста по левому краю */
+  margin: 20px 0;
+}
+
+.booking {
+  margin-top: 20px;
+}
+
+form {
+  display: flex;
+  justify-content: center; /* Выравнивание формы по центру */
+  align-items: center;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px; /* Расстояние между элементами */
+  background-color: white; /* Белый фон под формой */
+  padding: 10px; /* Отступы */
+  border-radius: 10px; /* Закругленные углы */
+}
+
+.form-group {
+  margin: 0; /* Убрать нижний отступ */
+  flex: 1; /* Расширение группы на доступное пространство */
+}
+
+label {
+  color: black; /* Цвет текста для меток */
+}
+
+input[type="text"], input[type="number"] {
+  padding: 10px;
+  border: 2px solid #ccc; /* Граница для полей ввода */
+  border-radius: 5px;
+  width: 100%; /* Ширина полей ввода */
+}
+
+.date-picker {
+  cursor: pointer;
+}
+
+button.search-button {
+  padding: 10px 20px;
+  background-color: #003366; /* Синий цвет кнопки */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.search-button:hover {
+  background-color: #002244; /* Темнее синий при наведении */
 }
