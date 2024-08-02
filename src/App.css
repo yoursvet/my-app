@@ -1,106 +1,141 @@
-/* Основные стили для приложения */
-.App {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-  height: 100vh; /* Высота на весь экран */
+/* Стили для меню */
+.menu {
   display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-/* Фон на весь экран */
-.background-image {
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; /* Фон фиксирован */
-  width: 100%;
-  height: 100vh; /* Фон на весь экран */
-  position: absolute;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон для меню */
+  padding: 10px 0; /* Отступы сверху и снизу */
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: -1; /* Фон за всеми другими элементами */
+  width: 100%;
+  z-index: 1000;
 }
 
-/* Оверлей для полупрозрачного фона */
+.menu-item {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  margin: 0 15px; /* Отступы между элементами меню */
+  transition: color 0.3s;
+}
+
+.menu-item:hover {
+  color: #66b2ff; /* Изменение цвета текста при наведении */
+}
+
+/* Общие стили для приложения */
+.App {
+  text-align: center;
+}
+
+.background-image {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
 .overlay {
-  background: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон для наложения */
+  background: rgba(0, 0, 0, 0.5);
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Общие стили для контейнеров */
 .content-container {
-  max-width: 1200px; /* Максимальная ширина контента */
-  width: 100%;
-  text-align: center; /* Выравнивание текста по центру */
-}
-
-.main-menu {
   color: white;
+  text-align: left; /* Выравнивание текста по левому краю */
+  max-width: 800px; /* Устанавливаем максимальную ширину контейнера, чтобы текст не растягивался на всю ширину */
+  margin: 0 auto; /* Центрирование контейнера по горизонтали */
+  padding: 20px; /* Добавляем внутренние отступы */
 }
 
 .headline-1 {
-  font-size: 30px; /* Размер шрифта для первого заголовка */
-  text-align: left; /* Выравнивание текста по левому краю */
-  margin: 20px 0;
+  font-size: 3rem; /* Увеличиваем размер шрифта */
+  margin: 0 0 10px 0; /* Отступ снизу */
 }
 
 .headline-2 {
-  font-size: 56px; /* Размер шрифта для второго заголовка */
-  text-align: left; /* Выравнивание текста по левому краю */
-  margin: 20px 0;
+  font-size: 2rem; /* Увеличиваем размер шрифта */
+  margin: 0; /* Убираем стандартные отступы */
 }
 
 .booking {
   margin-top: 20px;
 }
 
-form {
-  display: flex;
-  justify-content: center; /* Выравнивание формы по центру */
-  align-items: center;
-}
-
+/* Стили для формы */
 .form-row {
   display: flex;
-  gap: 10px; /* Расстояние между элементами */
-  background-color: white; /* Белый фон под формой */
-  padding: 10px; /* Отступы */
-  border-radius: 10px; /* Закругленные углы */
+  flex-direction: row; /* Изменено с column на row для горизонтального расположения */
+  justify-content: center; /* Выравниваем элементы по центру */
+  gap: 15px; /* Добавляем промежуток между элементами */
 }
 
 .form-group {
-  margin: 0; /* Убрать нижний отступ */
-  flex: 1; /* Расширение группы на доступное пространство */
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column; /* Оставляем вертикальное расположение внутри form-group */
+  align-items: flex-start;
 }
 
 label {
-  color: black; /* Цвет текста для меток */
+  margin-bottom: 5px;
 }
 
-input[type="text"], input[type="number"] {
-  padding: 10px;
-  border: 2px solid #ccc; /* Граница для полей ввода */
-  border-radius: 5px;
-  width: 100%; /* Ширина полей ввода */
+input[type="text"],
+input[type="number"] {
+  width: 200px;
+  padding: 8px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
 }
 
-.date-picker {
-  cursor: pointer;
-}
-
-button.search-button {
-  padding: 10px 20px;
-  background-color: #003366; /* Синий цвет кнопки */
+.search-button {
+  width: 100px; 
+  height: 30px;
+  padding: 0; 
+  font-size: 0.75rem; 
+  background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-button.search-button:hover {
-  background-color: #002244; /* Темнее синий при наведении */
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+/* Стили для подвала */
+.footer {
+  background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный черный фон */
+  color: white;
+  text-align: center;
+  padding: 10px 0; /* Уменьшаем верхний и нижний отступ */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  font-size: 0.875rem; /* Уменьшаем размер шрифта */
+}
+
+.footer a {
+  color: #66b2ff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-info {
+  margin: 0; /* Убираем отступы внутри подвала */
 }
